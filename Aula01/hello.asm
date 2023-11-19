@@ -19,6 +19,7 @@ _start:
     mov     EBX, 0x1    ; informa saída padrão
     mov     ECX,msg     ;
     mov     EDX,tam     ;
+    int 0x80
 
     ;as três instruções abaixo são obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1 ;terminando o programa
