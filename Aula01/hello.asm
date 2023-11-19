@@ -23,6 +23,6 @@ _start:
 
 saida:
     ;as três instruções abaixo são obrigatórias para encerrar qualquer programa nasm
-    mov     eax,0x1 ;terminando o programa
+    mov     eax,0x1 ;Indica o final de operação, corresponde a System.exit
     mov     ebx,0x0 ;return 0
-    int     0x80
+    int     0x80    ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
