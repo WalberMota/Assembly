@@ -1,3 +1,6 @@
+;Para gerar o programa compilador  hello.o usamos: nasm -f elf64 hello.asm
+;
+
 section .data
 
 section .bss
