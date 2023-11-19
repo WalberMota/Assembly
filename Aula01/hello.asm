@@ -21,6 +21,7 @@ _start:
     mov     EDX,tam     ;
     int 0x80
 
+saida:
     ;as três instruções abaixo são obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1 ;terminando o programa
     mov     ebx,0x0 ;return 0
