@@ -1,5 +1,8 @@
-;Para gerar o programa compilador  hello.o usamos: nasm -f elf64 hello.asm
-;
+;Compilação:
+;Para gerar o programa compilado "shello.o" : "nasm -f elf64 hello.asm"
+;Linkedição:
+;Para gerar um executável : ld -s -o hello hello.o
+
 
 section .data
 
