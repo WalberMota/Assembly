@@ -15,7 +15,7 @@ section .text
 global _start
 
 _start:
-    mov     EAX,0x4     ; instrução de mandar algo para stdout (saída padrão)
+    mov     EAX,0x4     ; instrução de mandar algo para stdout (saída padrão)(ox3=read; 0x4=write)
     mov     EBX, 0x1    ; informa saída padrão
     mov     ECX,msg     ;
     mov     EDX,tam     ;
