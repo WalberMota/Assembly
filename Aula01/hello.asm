@@ -1,4 +1,6 @@
-section  .data
+section .data
 
-section  .bss
+section .bss
+
+section .text
 
