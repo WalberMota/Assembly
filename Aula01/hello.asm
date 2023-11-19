@@ -5,8 +5,8 @@
 
 
 section .data
-    msg db "Ola assembly!", 0xA   ;referencia para criar a string com ASCII de line feed
-    tam equ $- msg                ;obtém o tamanho da msg
+    msg db "Ola assembly!"   ;referencia para criar a string com ASCII de line feed
+    tam equ $- msg           ;obtém o tamanho da msg
 
 section .bss
 
