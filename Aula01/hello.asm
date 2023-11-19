@@ -16,7 +16,7 @@ global _start
 
 _start:
     mov     EAX,0x4     ; instrução de mandar algo para stdout (saída padrão)(ox3=read; 0x4=write)
-    mov     EBX, 0x1    ; informa saída padrão
+    mov     EBX, 0x1    ; informa saída padrão,System.out. 0x0 para entrada de valor, System.in
     mov     ECX,msg     ;
     mov     EDX,tam     ;
     int 0x80
