@@ -8,7 +8,7 @@ segment .data
     ;EAX
     SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
     SYS_READ    equ 0x3 ; Operacao de Leitura
-    SYS_WRITE   equ 0x4 ; Operacao de Escrita
+        SYS_WRITE   equ 0x4 ; Operacao de Escrita
     ;EBX
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
     STD_IN      equ 0x0 ; Entrada padrao
@@ -25,6 +25,6 @@ section .text   ;aqui informa onde começa a programação
 
 global _start  ;enter point do programa
 
-    
-    
-    
+_start
+    mov eax,SYS_WRITE
+    mov ebx,STD_OUT
