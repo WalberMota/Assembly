@@ -26,8 +26,14 @@ section .text   ;aqui informa onde começa a programação
 global _start  ;enter point do programa
 
 _start
-    mov eax,SYS_WRITE
-    mov ebx,STD_OUT
-    mov ecx, msg
-    mov edx,tam
-    int SYS_CALL
+    mov eax,SYS_WRITE   ;ativa operação de saída
+    mov ebx,STD_OUT     ;para a saída padrão
+    mov ecx, msg        ;exibe a mensagem ao usuário
+    mov edx,tam         ;tamanho da string a ser exibida
+    int SYS_CALL        ;passa o comando para o SO
+
+    mov eax,SYS_READ    ;ativa operação de leitura
+    mov ebx,STD_IN      ;para receber pela entrada padrão
+    mov ecx, nome       ;recebe o nome
+    mov edx,0xA         ;pega dez caracteres - tem que informar a quantdadee sempre
+    int SYS_CALL        ;passa o comando para o SO
