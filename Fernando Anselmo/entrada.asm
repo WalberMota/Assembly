@@ -16,7 +16,7 @@ segment .data
 
 section .data   ;esta seção é apenas para termo constantes
     msg db "Entre com seu nome: ",LF,NULL
-    tam $- msg
+    tam equ $- msg
 
 section .bss    ;esta seção em tese colocamos as nossas variáveis
     nome resb 1 ;cria uma variável 'nome' que vai receber bytes de informação.
@@ -25,7 +25,7 @@ section .text   ;aqui informa onde começa a programação
 
 global _start  ;enter point do programa
 
-_start
+_start:
     mov eax,SYS_WRITE   ;ativa operação de saída
     mov ebx,STD_OUT     ;para a saída padrão
     mov ecx, msg        ;exibe a mensagem ao usuário
