@@ -14,10 +14,12 @@ segment .data
     STD_IN      equ 0x0 ; Entrada padrao
     STD_OUT     equ 0x1 ; Saida padrao
 
-section .data
+section .data   ;esta seção é apenas para termo constantes
     msg db "Entre com seu nome: ",LF,NULL
     tam $- msg
 
+section .bss    ;esta seção em tese colocamos as nossas variáveis
+    nome resb 1 ;cria uma variável 'nome' que vai receber bytes de informação.
 
     
     
