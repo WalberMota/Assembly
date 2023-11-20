@@ -37,3 +37,7 @@ _start
     mov ecx, nome       ;recebe o nome
     mov edx,0xA         ;pega dez caracteres - tem que informar a quantdadee sempre
     int SYS_CALL        ;passa o comando para o SO
+
+    mov eax,SYS_EXIT
+    mov ebx,RET_EXIT
+    int SYS_CALL        ;passa o comando para o SO
