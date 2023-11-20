@@ -23,7 +23,7 @@ section .bss    ;esta seção em tese colocamos as nossas variáveis
 
 section .text   ;aqui informa onde começa a programação
 
-section _start  ;enter point do programa
+global _start  ;enter point do programa
 
     
     
