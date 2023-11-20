@@ -37,7 +37,7 @@ _start:
     mov eax,SYS_READ    ;ativa operação de leitura
     mov ebx,STD_IN      ;para receber pela entrada padrão
     mov ecx, nome       ;recebe o nome
-    mov edx,0xA         ;pega dez caracteres - tem que informar a quantdadee sempre
+    mov edx,0xA         ;é obrigatório informar uma quantidade de caracteres
     int SYS_CALL        ;passa o comando para o SO
 
 end:
