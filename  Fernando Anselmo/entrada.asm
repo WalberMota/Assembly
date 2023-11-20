@@ -10,7 +10,7 @@ segment .data
     SYS_READ    equ 0x3 ; Operacao de Leitura
     SYS_WRITE   equ 0x4 ; Operacao de Escrita
     ;EBX
-    RET_EXIT    equ 0x0 ; Operacao com Sucesso
+    RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
     STD_IN      equ 0x0 ; Entrada padrao
     STD_OUT     equ 0x1 ; Saida padrao
     
