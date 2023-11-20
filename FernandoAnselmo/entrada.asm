@@ -26,12 +26,14 @@ section .text   ;aqui informa onde começa a programação
 global _start  ;enter point do programa
 
 _start:
+    ; cout
     mov eax,SYS_WRITE   ;ativa operação de saída
     mov ebx,STD_OUT     ;para a saída padrão
     mov ecx, msg        ;exibe a mensagem ao usuário
     mov edx,tam         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
 
+    ;cin
     mov eax,SYS_READ    ;ativa operação de leitura
     mov ebx,STD_IN      ;para receber pela entrada padrão
     mov ecx, nome       ;recebe o nome
