@@ -20,7 +20,7 @@ section .data   ;esta seção é apenas para termo constantes
     msg db "Entre com seu nome: ",LF,NULL
     tam equ $- msg
 
-section .bss    ;esta seção em tese colocamos as nossas variáveis
+section .bss    ;esta seção, em tese, colocamos as nossas variáveis
     nome resb 1 ;cria uma variável 'nome' que vai receber bytes de informação.
 
 section .text   ;aqui informa onde começa a programação
