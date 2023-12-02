@@ -43,7 +43,7 @@ _start:
     mov edx,0xA         ;é obrigatório informar uma quantidade de caracteres 0xA=10
     int SYS_CALL        ;passa o comando para o SO
 
-end:
+end: ;aqui usamos as instruções para fiinalizar o programa.
     mov eax,SYS_EXIT
     mov ebx,RET_EXIT
     int SYS_CALL        ;passa o comando para o SO
