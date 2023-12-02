@@ -5,14 +5,16 @@ segment .data
     LF          equ 0xA ; Line Feed (\n)
     SYS_CALL    equ 0x80 ; Envia informacao ao SO
     NULL        equ 0xD ; ponteiro para o final da cadeia de caracteres(Final da String)
-    ;EAX
-    SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
+
+    ;EAX -------Registrador que usa estas instruções
     SYS_READ    equ 0x3 ; Operacao de Leitura
     SYS_WRITE   equ 0x4 ; Operacao de Escrita
-    ;EBX
-    RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
+    SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
+
+    ;EBX -------Registrador que usa estas instruções
     STD_IN      equ 0x0 ; Entrada padrao
     STD_OUT     equ 0x1 ; Saida padrao
+    RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .data   ;esta seção é apenas para termo constantes
     msg db "Entre com seu nome: ",LF,NULL
