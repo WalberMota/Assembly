@@ -26,21 +26,21 @@ section .bss    ;esta seção, em tese, colocamos as nossas variáveis
 
 section .text   ;aqui informa onde começa a programação
 
-global _start  ;enter point do programa
+global _start  ;cria um label para o ponto de entrada do programa
 
 _start:
-    ; cout
+    ;aqui ocorre a saida para o usuário (cout)
     mov eax,SYS_WRITE   ;ativa operação de saída
     mov ebx,STD_OUT     ;para a saída padrão
     mov ecx, msg        ;exibe a mensagem ao usuário
     mov edx,tam         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
 
-    ;cin
+    ;aqui ocorre a entrada dos dados fornecidos pelo usuário(cin)
     mov eax,SYS_READ    ;ativa operação de leitura
     mov ebx,STD_IN      ;para receber pela entrada padrão
     mov ecx, nome       ;recebe o nome
-    mov edx,0xA         ;é obrigatório informar uma quantidade de caracteres
+    mov edx,0xA         ;é obrigatório informar uma quantidade de caracteres 0xA=10
     int SYS_CALL        ;passa o comando para o SO
 
 end:
