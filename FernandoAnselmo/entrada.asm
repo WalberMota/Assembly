@@ -22,6 +22,7 @@ section .data   ;esta seção é apenas para termo constantes
 
 section .bss    ;esta seção, em tese, colocamos as nossas variáveis
     nome resb 1 ;cria uma variável 'nome' que vai receber bytes de informação.
+                ;(armazenas informações de byte em byte não tem haver com tamanho da variável).
 
 section .text   ;aqui informa onde começa a programação
 
