@@ -1,5 +1,5 @@
 NOME = entrada
-
+# linkador
 all: $(NOME).o
 	ld -s -o output $(NOME).o
 	rm -rf *.o;
