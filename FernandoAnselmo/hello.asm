@@ -1,3 +1,4 @@
+;Walber Mota
 ;Compilação:
 ;Para gerar o programa compilado "shello.o" : "nasm -f elf64 hello.asm"
 
