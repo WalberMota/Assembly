@@ -2,6 +2,7 @@
 ;executa uma saida na chamada do sistema
 ;Sem entradas (inputs)
 ;saida : apenas a saida no status use ($? no shell)
+;compilar: 'nasm -f elf64 saida.asm' e 'ld saida.o -o saida'
 
 
 segment .text
