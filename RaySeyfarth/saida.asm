@@ -4,14 +4,13 @@
 ;saida : apenas a saida no status use ($? no shell)
 
 
-segment . text
+segment .text
 
 global _start
 
 _start :
         mov eax,1 ;1 é o número de chamada do sistema de saída
         mov ebx,5 ;o valor do status a ser retornado
-        int Ox80  ;executar uma chamada de sistema
+        int 0x80  ;executar uma chamada de sistema
 
-the status value to return
 
