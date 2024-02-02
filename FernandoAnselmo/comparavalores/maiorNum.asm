@@ -31,9 +31,12 @@ _start:
     mov EBX,DWORD[y]
     ; if -comparação
     cmp EAX,EBX
+    ;Saltos condicionais:
     ; je  - salte para... se = 
     ; jg  - salte para... se >
     ; jge - salte para... se >=
     ; jl  - salte para... se <
     ; jle - salte para... se <=
     ; jne - salte para...se != (diferente)
+    ; Salto incondicional:
+    ; jmp - goto ...
