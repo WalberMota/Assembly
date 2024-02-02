@@ -33,11 +33,18 @@ _start:
     mov EBX,DWORD[y]
     ; instrução de comparação.
     cmp EAX,EBX
-    jge maior; se x >= y salta para label maior:
+
+    je igual    ; se x = y salta para label igual:
+    jg maior    ; se x > y salta para label maior:
     ;casos contrário - x < y, executa as instruções abaixo
     mov ECX,msg2 ; mostra mensagem quando x < y
     mov EDX,tam2
     jmp final
+
+igual:
+    mov ECX,msg3
+    mov EDX,tam3
+    je final
 
 maior:
     mov ECX, msg1; mostra a mensagem quando x >= y
