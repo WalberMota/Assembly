@@ -1,4 +1,4 @@
-NOME = hello
+NOME = maiorNum
 # linkador
 all: $(NOME).o
 	ld -s -o output $(NOME).o
