@@ -60,3 +60,5 @@ final:
     ; jne - salte para...se != (diferente)
     ; Salto incondicional:
     ; jmp - goto ...
+
+    
