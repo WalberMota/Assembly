@@ -1,4 +1,4 @@
-NOME = entrada
+NOME = hello
 # linkador
 all: $(NOME).o
 	ld -s -o output $(NOME).o
