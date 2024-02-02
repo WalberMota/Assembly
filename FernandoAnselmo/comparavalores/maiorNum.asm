@@ -27,7 +27,7 @@ section .text
 global _start
 
 _start:
-    mov EAX,dobleword[x]
+    mov EAX,DWORD[x]
     mov EBX,DWORD[y]
     ; instrução de comparação.
     cmp EAX,EBX
@@ -61,4 +61,3 @@ final:
     ; Salto incondicional:
     ; jmp - goto ...
 
-    
