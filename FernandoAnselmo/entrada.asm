@@ -2,9 +2,9 @@
 ; Programa para Entrada de Dados
 ;
 segment .data
-    LF          equ 0xA ; Line Feed (\n)
+    LF          equ 0xA  ; Line Feed (\n)
     SYS_CALL    equ 0x80 ; Envia informacao ao SO
-    NULL        equ 0xD ; ponteiro para o final da cadeia de caracteres(Final da String)
+    NULL        equ 0xD  ; ponteiro para o final da cadeia de caracteres(Final da String)
 
     ;EAX -------Registrador que usa estas instruções
     SYS_READ    equ 0x3 ; Operacao de Leitura
