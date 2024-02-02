@@ -29,16 +29,16 @@ global _start
 _start:
     mov EAX,dobleword[x]
     mov EBX,DWORD[y]
-    ; if -comparação
+    ; instrução de comparação.
     cmp EAX,EBX
-    jge maior; x >= y
-    ;x < y
-    mov ECX,msg2 ; x < y
+    jge maior; se x >= y salta para label maior:
+    ;casos contrário - x < y, executa as instruções abaixo
+    mov ECX,msg2 ; mostra mensagem quando x < y
     mov EDX,tam2
     jmp final
 
 maior:
-    mov ECX, msg1
+    mov ECX, msg1; mostra a mensagem quando x >= y
     mov EDX, tam1
 
 final:
