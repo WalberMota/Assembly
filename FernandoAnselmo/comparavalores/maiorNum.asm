@@ -21,3 +21,10 @@ section .data
     tam1 equ $- msg1
     msg2 db 'Y maior que X',LF,NULL
     tam2 equ $- msg2
+
+section .text
+
+global _start
+
+_start:
+
