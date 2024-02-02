@@ -14,5 +14,5 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .data
-    x dd 50
+    x dd 50             ;dd - define dobleword = 16 bits (2 bytes); db - define byte (1 byte = 8 bits)
     y dd 10
