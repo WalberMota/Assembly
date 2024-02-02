@@ -7,7 +7,7 @@
 
 
 section .data
-    msg db "Primeiro Programa em Assembly"   ;referencia para criar a string com ASCII de line feed
+    msg db "Primeiro Programa em Assembly", 0xA, "Aqui é outra linha", 0xA   ;referencia para criar a string com ASCII de line feed
     tam equ $- msg           ;obtém o tamanho da msg
 
 section .bss
