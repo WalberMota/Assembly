@@ -17,9 +17,9 @@ section .data
 ; db - define byte (1 byte = 8 bits); dw (define word = um char 2 bytes = 16 bites); dd - define dobleword = 32 bits (4 bytes);dq define quadword 64 bits(8 bytes); dt (10 bytes)
     x dd 50             
     y dd 10
-    msg1 db 'X maior que Y',LF,NULL
+    msg1 db "X maior ou igual à Y",LF,NULL
     tam1 equ $- msg1
-    msg2 db 'Y maior que X',LF,NULL
+    msg2 db "Y maior que X",LF,NULL
     tam2 equ $- msg2
 
 section .text
@@ -31,6 +31,26 @@ _start:
     mov EBX,DWORD[y]
     ; if -comparação
     cmp EAX,EBX
+    jge maior; x >= y
+    ;x < y
+    mov ECX,msg2 ; x < y
+    mov EDX,tam2
+    jmp final
+
+maior:
+    mov ECX, msg1
+    mov EDX, tam1
+
+final:
+    mov EAX,SYS_WRITE   ;instrução de escrita
+    mov EBX,STD_OUT     ;saída padrão
+    int SYS_CALL
+
+    mov EAX,SYS_EXIT    ;final da operação
+    mov EBX,RET_EXIT    ;estado de retorno 0
+    int SYS_CALL        ;executar - System.exit
+
+
     ;Saltos condicionais:
     ; je  - salte para... se = 
     ; jg  - salte para... se >
