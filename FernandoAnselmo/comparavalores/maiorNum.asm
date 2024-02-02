@@ -47,7 +47,7 @@ final:
     int SYS_CALL
 
     mov EAX,SYS_EXIT    ;final da operação
-    mov EBX,RET_EXIT    ;estado de retorno 0
+    xor EBX,EBX         ;pode usar mov EBX,RET_EXIT - estado de retorno 0
     int SYS_CALL        ;executar - System.exit
 
 
