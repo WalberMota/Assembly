@@ -14,3 +14,5 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .data
+    x dd 50
+    y dd 10
