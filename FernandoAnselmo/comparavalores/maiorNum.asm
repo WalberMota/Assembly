@@ -27,4 +27,5 @@ section .text
 global _start
 
 _start:
-
+    mov EAX,dobleword[x]
+    mov EBX,DWORD[y]
