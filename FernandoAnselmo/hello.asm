@@ -1,6 +1,6 @@
 ;Walber Mota
 ;Compilação:
-;Para gerar o programa compilado "shello.o" : "nasm -f elf64 hello.asm"
+;Para gerar o programa compilado "hello.o" : "nasm -f elf64 hello.asm"
 
 ;Linkedição:
 ;Para gerar um executável : ld -s -o hello hello.o
