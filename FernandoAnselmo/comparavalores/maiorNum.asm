@@ -14,5 +14,6 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .data
-    x dd 50             ; db - define byte (1 byte = 8 bits); dw (define word = um char 2 bytes = 16 bites); dd - define dobleword = 32 bits (4 bytes);dq define quadword 64 bits(8 bytes); dt (10 bytes)
+; db - define byte (1 byte = 8 bits); dw (define word = um char 2 bytes = 16 bites); dd - define dobleword = 32 bits (4 bytes);dq define quadword 64 bits(8 bytes); dt (10 bytes)
+    x dd 50             
     y dd 10
