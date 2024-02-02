@@ -29,3 +29,11 @@ global _start
 _start:
     mov EAX,dobleword[x]
     mov EBX,DWORD[y]
+    ; if -comparação
+    cmp EAX,EBX
+    ; je - igual
+    ; jg - >
+    ; jge - >=
+    ; jl - <
+    ; jle - <=
+    ; jne - != (diferente)
