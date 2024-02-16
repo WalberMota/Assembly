@@ -1,5 +1,8 @@
+; Compile with: nasm -f elf entrada.asm
+; Link with (64 bit systems require elf_i386 option): ld -m elf_i386 entrada.o -o entrada
+; Run with: ./entrada
 ; entrada.asm
-; Programa para Entrada de Dados
+; Entrada de Dados no programa
 ;
 segment .data
     LF          equ 0xA  ; Line Feed (\n)
