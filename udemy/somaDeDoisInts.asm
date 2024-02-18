@@ -40,10 +40,10 @@ _start:
     sub eax, 20000h
     int 0x80  
 
-    mov eax,SYS_WRITE   ;ativa operação de saída
-    mov ebx,STD_OUT     ;para a saída padrão
+    mov eax, SYS_WRITE   ;ativa operação de saída
+    mov ebx, STD_OUT     ;para a saída padrão
     mov ecx, eax        ;exibe a mensagem ao usuário
-;    mov edx,tam         ;tamanho da string a ser exibida
+    mov edx, 0x4         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
 
 saida:
