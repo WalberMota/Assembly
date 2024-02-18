@@ -38,6 +38,11 @@ _start:
     sub eax, 20000h
     int 0x80  
 
+    mov eax,SYS_WRITE   ;ativa operação de saída
+    mov ebx,STD_OUT     ;para a saída padrão
+    mov ecx, eax        ;exibe a mensagem ao usuário
+
+
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1 ;Indica o final de operação, corresponde a System.exit
