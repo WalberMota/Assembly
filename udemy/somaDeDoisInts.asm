@@ -26,8 +26,8 @@ segment .data
     STD_OUT     equ 0x1 ; Saida padrao
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
-    
-section .text
+
+section .text   ;aqui informa onde começa a programação
 
 global _start
 
