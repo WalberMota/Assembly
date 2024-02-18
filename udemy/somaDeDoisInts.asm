@@ -38,7 +38,6 @@ _start:
     sub eax, 20000h
     int 0x80  
 
-
 saida:
     ;as três instruções abaixo são obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1 ;Indica o final de operação, corresponde a System.exit
