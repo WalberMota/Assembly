@@ -10,7 +10,11 @@
 ;     ret
 ; ;main ENDP
 ; ;END main
+section .text
 
+global _start
+
+_start:
 
     mov eax, 10000h
     add eax, 40000h
