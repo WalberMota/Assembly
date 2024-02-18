@@ -26,6 +26,8 @@ segment .data
     STD_OUT     equ 0x1 ; Saida padrao
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
+section .bss    ;secção variáveis
+    nome resb 1
 
 section .text   ;aqui começa a programação
 
@@ -40,8 +42,9 @@ _start:
 
     mov eax,SYS_WRITE   ;ativa operação de saída
     mov ebx,STD_OUT     ;para a saída padrão
-    mov ecx, eax        ;exibe a mensagem ao usuário
-
+    mov ecx, msg        ;exibe a mensagem ao usuário
+;    mov edx,tam         ;tamanho da string a ser exibida
+    int SYS_CALL        ;passa o comando para o SO
 
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
