@@ -27,9 +27,9 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 
-section .text   ;aqui informa onde começa a programação
+section .text   ;aqui começa a programação
 
-global _start
+global _start   ;label do ponto de entrada do programa
 
 _start:
 
