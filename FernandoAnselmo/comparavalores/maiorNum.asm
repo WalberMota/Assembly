@@ -25,8 +25,7 @@ section .data
     tam3 equ $- msg3
 
 section .text
-
-global _start
+    global _start
 
 _start:
     mov EAX,DWORD[x]
