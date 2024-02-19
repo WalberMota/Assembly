@@ -14,7 +14,7 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
-    result resw 1    ;reserva espaço na memoria
+    result resb 2    ;reserva espaço na memoria
     tam equ $- result ; tamanho da ṕarea criada
 
 section .text   ;aqui começa a programação
