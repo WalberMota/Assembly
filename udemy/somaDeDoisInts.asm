@@ -27,19 +27,18 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
-    resultado resd 1    ;reserva epaço double
+    resultado resb 1    ;reserva epaço double
 
 section .text   ;aqui começa a programação
     global _start   ;label do ponto de entrada do programa
 
 _start:
 
-    mov eax, 0x10000
-    add eax, 0x40000
-    int SYS_CALL
-    sub eax, 0x20000
+    mov eax, 0x5
+    add eax, 0x5
+    ;sub eax, 20000h
     mov [resultado], eax
-    int 0x80  
+    ;int SYS_CALL 
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
