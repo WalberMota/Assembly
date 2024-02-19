@@ -14,7 +14,8 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
-    resultado resb 1    ;reserva espaço na memoria
+    result resw 1    ;reserva espaço na memoria
+    tam equ $- result ; tamanho da ṕarea criada
 
 section .text   ;aqui começa a programação
     global _start   ;label do ponto de entrada do programa
@@ -23,13 +24,13 @@ _start:
 
     mov eax, 0x5
     add eax, 0x5
-    mov [resultado], eax
+    mov [result], eax
 ;    int SYS_CALL 
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
-    mov ecx, [resultado]        ;exibe a mensagem ao usuário
-    mov edx, 0x4         ;tamanho da string a ser exibida
+    mov ecx, result        ;exibe a mensagem ao usuário
+    mov edx, tam         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
 
 saida:
