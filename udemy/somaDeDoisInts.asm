@@ -38,7 +38,7 @@ _start:
     add eax, 0x5
     ;sub eax, 20000h
     mov [resultado], eax
-    ;int SYS_CALL 
+    int SYS_CALL 
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
