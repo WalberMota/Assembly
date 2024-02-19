@@ -43,7 +43,7 @@ _start:
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
-    mov ecx, resultado        ;exibe a mensagem ao usuário
+    mov ecx, [resultado]        ;exibe a mensagem ao usuário
     mov edx, 0x4         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
 
