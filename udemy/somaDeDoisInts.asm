@@ -1,16 +1,3 @@
-; ;.386
-; ;.model flat,stdcall
-; ;.stack 4096
-; ;.code
-; ;main Proc
-;     mov eax, 10000h
-;     add eax, 40000h
-;     sub eax, 20000h
-;     int 0x80  
-;     ret
-; ;main ENDP
-; ;END main
-
 segment .data
     LF          equ 0xA  ; Line Feed (\n)
     SYS_CALL    equ 0x80 ; Envia informacao ao SO
@@ -27,7 +14,7 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
-    resultado resb 1    ;reserva epaço double
+    resultado resb 1    ;reserva espaço na memoria
 
 section .text   ;aqui começa a programação
     global _start   ;label do ponto de entrada do programa
@@ -36,9 +23,8 @@ _start:
 
     mov eax, 0x5
     add eax, 0x5
-    ;sub eax, 20000h
     mov [resultado], eax
-    int SYS_CALL 
+;    int SYS_CALL 
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
