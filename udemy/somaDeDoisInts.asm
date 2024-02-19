@@ -35,9 +35,10 @@ global _start   ;label do ponto de entrada do programa
 
 _start:
 
-    mov eax, 10000h
-    add eax, 40000h
-    sub eax, 20000h
+    mov eax, 0x10000
+    add eax, 0x40000
+    int SYS_CALL
+    sub eax, 0x20000
     int 0x80  
 
     mov eax, SYS_WRITE   ;ativa operação de saída
@@ -48,6 +49,6 @@ _start:
 
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
-    mov     eax,0x1 ;Indica o final de operação, corresponde a System.exit
-    mov     ebx,0x0 ;Informa o estado final do programa - 0 sem erro
-    int     0x80    ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
+    mov     eax,SYS_EXIT ;Indica o final de operação, corresponde a System.exit
+    mov     ebx,RET_EXIT ;Informa o estado final do programa - 0 sem erro
+    int     SYS_CALL    ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
