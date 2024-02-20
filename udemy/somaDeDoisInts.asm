@@ -25,14 +25,14 @@ _start:
     mov eax, 0x21
     add eax, 0x20
     mov [result], eax
-    int SYS_CALL 
+    int SYS_CALL
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
+    
     mov ecx, result      ;exibe a mensagem ao usuário
     mov edx, tam         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
-    
 
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
