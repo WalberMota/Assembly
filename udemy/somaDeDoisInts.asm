@@ -22,10 +22,10 @@ section .text   ;aqui começa a programação
 
 _start:
 
-    mov eax, 0x5
-    add eax, 0x5
+    mov eax, 0x14
+    add eax, 0x15
     mov [result], eax
-;    int SYS_CALL 
+    int SYS_CALL 
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
