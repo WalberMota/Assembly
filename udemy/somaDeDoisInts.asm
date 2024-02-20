@@ -22,8 +22,8 @@ section .text   ;aqui começa a programação
 
 _start:
 
-    mov eax, 0x14
-    add eax, 0x15
+    mov eax, 0x31
+    add eax, 0x10
     mov [result], eax
     int SYS_CALL 
 
