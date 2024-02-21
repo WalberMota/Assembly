@@ -14,7 +14,7 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
-    result resb 2    ;reserva espaço na memoria
+    result resb 1    ;reserva espaço na memoria
     tam equ $- result ; tamanho da ṕarea criada
 
 section .text   ;aqui começa a programação
@@ -22,17 +22,24 @@ section .text   ;aqui começa a programação
 
 _start:
 
-    mov eax, 0x22
-    add eax, 0x20
+    mov eax, 0x41
+
+loop:
     mov [result], eax
     int SYS_CALL
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
-    
-    mov ecx, result      ;exibe a mensagem ao usuário
+    mov ecx, result      ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
+    
+    mov eax,[result]    ;porque so funciona entre colchete. passa o valor no endereço?
+    add eax, 0x01
+    cmp eax,0x43
+    jle loop
+
+
 
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
