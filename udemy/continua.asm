@@ -35,14 +35,14 @@ _start:
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
     mov ecx, result     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam0         ;tamanho da string a ser exibida
+    mov edx, tam0         ;diz qual o tamanho do dado no endereço 'result'
     int SYS_CALL        ;passa o comando para o SO
 
 ;operação de line feed 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
     mov ecx, nline     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam1         ;tamanho da string a ser exibida
+    mov edx, tam1         ; 'nline'
     int SYS_CALL        ;passa o comando para o SO
     
 saida:
