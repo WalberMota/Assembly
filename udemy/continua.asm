@@ -50,5 +50,11 @@ saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1         ;indica o final de operação, corresponde a System.exit
     mov     ebx,0x0         ;informa o estado final do programa - 0 sem erro
-    syscall                 ;implementa chamadas de sistema(syscall),
-                            ;uma forma de os programas do espaço do usuário se comunicarem com o kernel.
+    syscall                 
+                            ;syscall é a maneira padrão de entrar no modo kernel em x86-64.
+                            ;Esta instrução não está disponível nos modos de operação de 32
+                            ;bits nos processadores Intel.
+                            ;sysenter é uma instrução usada com mais freqüência para chamar
+                            ;chamadas do sistema nos modos de operação de 32 bits.
+                            ;É semelhante a syscall, porém um pouco mais difícil de usar,
+                            ;mas essa é a preocupação do kernel.
