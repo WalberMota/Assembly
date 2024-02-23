@@ -15,7 +15,7 @@
 
 section .bss    ;secção variáveis
     result: resb 1    ;reserva espaço na memoria
-    tam0: equ $ - result ; tamanho da ṕarea criada
+    tam0: equ $ - result ; $ - endereço final menos 'result' endereço inicial
 
 section  .data
     nline: db 0xA,0
