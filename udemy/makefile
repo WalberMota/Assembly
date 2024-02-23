@@ -5,5 +5,5 @@ all: $(NAME).o
 	@rm *.o
 
 %.o: %.asm
-	# @rm output
+	# @rm output - se não existir o programa dá um erro e não continua
 	nasm -g -f elf64 $<
