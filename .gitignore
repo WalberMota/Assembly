@@ -1,5 +1,6 @@
 
 *.o
 *. 
+*.out
 output
 Aula01/hello
