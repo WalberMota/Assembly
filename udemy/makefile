@@ -1,7 +1,7 @@
 NAME=continua
 
 all: $(NAME).o
-	ld -o output $(NAME).o 
+	ld $(NAME).o 
 	@rm *.o
 
 %.o: %.asm
