@@ -3,12 +3,12 @@
 ;     SYS_CALL    equ 0x80 ; Envia informacao ao SO
 ;     NULL        equ 0xD  ; ponteiro para o final da cadeia de caracteres(Final da String)
 
-;     ;EAX -------Registrador que usa estas instruções
+;     ;rax -------Registrador que usa estas instruções
 ;     SYS_READ    equ 0x3 ; Operacao de Leitura
 ;     SYS_WRITE   equ 0x4 ; Operacao de Escrita
 ;     SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
 
-;     ;EBX -------Registrador que usa estas instruções
+;     ;rbx -------Registrador que usa estas instruções
 ;     STD_IN      equ 0x0 ; Entrada padrao
 ;     STD_OUT     equ 0x1 ; Saida padrao
 ;     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
@@ -27,29 +27,29 @@ section .text   ;aqui começa a programação
                     ;especifica o ponto de entrada do programa
 _start:
 
-;carrega o valor 41h(65d) no registrador eax
-    mov eax, 0x41
-    mov [result], eax       ;tranfere o valor em eax para o endereço reservado em 'result'
+;carrega o valor 41h(65d) no registrador rax
+    mov rax, 0x41
+    mov [result], rax       ;tranfere o valor em rax para o endereço reservado em 'result'
     int 0x80                ;executa as operações anteriores
 ;operação de mostrar o caracter ascii 41h (A)
-    mov eax, 0x4            ;ativa operação de saída
-    mov ebx, 0x1            ;para a saída padrão
-    mov ecx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam0           ;diz qual o tamanho do dado no endereço 'result'
-    syscall                ;passa o comando para o SO
+    mov rax, 0x4            ;ativa operação de saída
+    mov rbx, 0x1            ;para a saída padrão
+    mov rcx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
+    mov rdx, tam0           ;diz qual o tamanho do dado no endereço 'result'
+    int 0x80                ;passa o comando para o SO
 
 ;operação de line feed 
-    mov eax, 0x4            ;ativa operação de saída
-    mov ebx, 0x1            ;para a saída padrão
-    mov ecx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
+    mov rax, 0x4            ;ativa operação de saída
+    mov rbx, 0x1            ;para a saída padrão
+    mov rcx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
+    mov rdx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
     int 0x80                ;passa o comando para o SO
                             ;int 0x80 é uma maneira herdada de chamar uma chamada do sistema
                             ;e deve ser evitada.
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
-    mov     eax,0x1         ;indica o final de operação, corresponde a System.exit
-    mov     ebx,0x0         ;informa o estado final do programa - 0 sem erro
+    mov     rax,0x3c         ;indica o final de operação, corresponde a System.exit
+    mov     rdi,0x0         ;informa o estado final do programa - 0 sem erro
     syscall                 
                             ;syscall é a maneira padrão de entrar no modo kernel em x86-64.
                             ;Esta instrução não está disponível nos modos de operação de 32
@@ -57,4 +57,5 @@ saida:
                             ;sysenter é uma instrução usada com mais freqüência para chamar
                             ;chamadas do sistema nos modos de operação de 32 bits.
                             ;É semelhante a syscall, porém um pouco mais difícil de usar,
-                            ;mas essa é a preocupação do kernel.
+                            ;mas essa é a preocupação do kernel. Para usar syscal tem que
+                            ;fazer 'mov rax,60' para evitar "segmentation fall"
