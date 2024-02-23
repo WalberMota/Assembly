@@ -39,8 +39,8 @@ _start:
     int SYS_CALL            ;passa o comando para o SO
 
 ;operação de line feed 
-    mov eax, SYS_WRITE      ;ativa operação de saída
-    mov ebx, STD_OUT        ;para a saída padrão
+    mov eax, 0x4            ;ativa operação de saída
+    mov ebx, 0x1            ;para a saída padrão
     mov ecx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
     int SYS_CALL            ;passa o comando para o SO
