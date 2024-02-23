@@ -27,9 +27,10 @@ section .text   ;aqui começa a programação
 
 _start:
 
+;carrega o valor 41h(65d) no registrador eax
     mov eax, 0x41
-    mov [result], eax
-    int SYS_CALL
+    mov [result], eax   ;tranfere o valor em eax para o endereço reservado em 'result'
+    int SYS_CALL        ;executa as operações anteriores
 ;operação de mostrar o caracter ascii 41h (A)
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
