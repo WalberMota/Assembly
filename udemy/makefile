@@ -1,4 +1,4 @@
-NAME=continua
+NAME=saida_syscall
 
 all: $(NAME).o
 	ld $(NAME).o 
