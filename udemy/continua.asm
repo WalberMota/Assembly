@@ -24,7 +24,7 @@ section  .data
 
 section .text   ;aqui começa a programação
     global _start   ;label do ponto de entrada do programa - global é uma diretiva do compilador
-
+                    ;especifica o ponto de entrada do programa
 _start:
 
 ;carrega o valor 41h(65d) no registrador eax
