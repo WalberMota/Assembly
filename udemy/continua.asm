@@ -32,8 +32,8 @@ _start:
     mov [result], eax       ;tranfere o valor em eax para o endereço reservado em 'result'
     int SYS_CALL            ;executa as operações anteriores
 ;operação de mostrar o caracter ascii 41h (A)
-    mov eax, SYS_WRITE      ;ativa operação de saída
-    mov ebx, STD_OUT        ;para a saída padrão
+    mov eax, 0x4            ;ativa operação de saída
+    mov ebx, 0x1            ;para a saída padrão
     mov ecx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam0           ;diz qual o tamanho do dado no endereço 'result'
     int SYS_CALL            ;passa o comando para o SO
