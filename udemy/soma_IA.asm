@@ -1,3 +1,5 @@
+;rotina dever avaliada por GDB
+;
 section .data
     num1 dd 5 ; primeiro número
     num2 dd 7 ; segundo número
