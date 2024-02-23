@@ -44,7 +44,8 @@ _start:
     mov ecx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
     int 0x80                ;passa o comando para o SO
-    
+                            ;int 0x80 é uma maneira herdada de chamar uma chamada do sistema
+                            ;e deve ser evitada.
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
     mov     eax,0x1         ;indica o final de operação, corresponde a System.exit
