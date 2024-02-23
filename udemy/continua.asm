@@ -1,17 +1,17 @@
-segment .data
-    LF          equ 0xA  ; Line Feed (\n)
-    SYS_CALL    equ 0x80 ; Envia informacao ao SO
-    NULL        equ 0xD  ; ponteiro para o final da cadeia de caracteres(Final da String)
+; segment .data
+;     LF          equ 0xA  ; Line Feed (\n)
+;     SYS_CALL    equ 0x80 ; Envia informacao ao SO
+;     NULL        equ 0xD  ; ponteiro para o final da cadeia de caracteres(Final da String)
 
-    ;EAX -------Registrador que usa estas instruções
-    SYS_READ    equ 0x3 ; Operacao de Leitura
-    SYS_WRITE   equ 0x4 ; Operacao de Escrita
-    SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
+;     ;EAX -------Registrador que usa estas instruções
+;     SYS_READ    equ 0x3 ; Operacao de Leitura
+;     SYS_WRITE   equ 0x4 ; Operacao de Escrita
+;     SYS_EXIT    equ 0x1 ; Codigo de chamada para finalizar
 
-    ;EBX -------Registrador que usa estas instruções
-    STD_IN      equ 0x0 ; Entrada padrao
-    STD_OUT     equ 0x1 ; Saida padrao
-    RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
+;     ;EBX -------Registrador que usa estas instruções
+;     STD_IN      equ 0x0 ; Entrada padrao
+;     STD_OUT     equ 0x1 ; Saida padrao
+;     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
     result: resb 1    ;reserva espaço na memoria
@@ -30,13 +30,13 @@ _start:
 ;carrega o valor 41h(65d) no registrador eax
     mov eax, 0x41
     mov [result], eax       ;tranfere o valor em eax para o endereço reservado em 'result'
-    int SYS_CALL            ;executa as operações anteriores
+    int 0x80                ;executa as operações anteriores
 ;operação de mostrar o caracter ascii 41h (A)
     mov eax, 0x4            ;ativa operação de saída
     mov ebx, 0x1            ;para a saída padrão
     mov ecx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam0           ;diz qual o tamanho do dado no endereço 'result'
-    int SYS_CALL            ;passa o comando para o SO
+    int 0x80                ;passa o comando para o SO
 
 ;operação de line feed 
     mov eax, 0x4            ;ativa operação de saída
