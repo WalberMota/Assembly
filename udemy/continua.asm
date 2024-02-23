@@ -29,24 +29,24 @@ _start:
 
 ;carrega o valor 41h(65d) no registrador eax
     mov eax, 0x41
-    mov [result], eax   ;tranfere o valor em eax para o endereço reservado em 'result'
-    int SYS_CALL        ;executa as operações anteriores
+    mov [result], eax       ;tranfere o valor em eax para o endereço reservado em 'result'
+    int SYS_CALL            ;executa as operações anteriores
 ;operação de mostrar o caracter ascii 41h (A)
-    mov eax, SYS_WRITE   ;ativa operação de saída
-    mov ebx, STD_OUT     ;para a saída padrão
-    mov ecx, result     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam0         ;diz qual o tamanho do dado no endereço 'result'
-    int SYS_CALL        ;passa o comando para o SO
+    mov eax, SYS_WRITE      ;ativa operação de saída
+    mov ebx, STD_OUT        ;para a saída padrão
+    mov ecx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
+    mov edx, tam0           ;diz qual o tamanho do dado no endereço 'result'
+    int SYS_CALL            ;passa o comando para o SO
 
 ;operação de line feed 
-    mov eax, SYS_WRITE   ;ativa operação de saída
-    mov ebx, STD_OUT     ;para a saída padrão
-    mov ecx, nline     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam1         ; 'nline'
-    int SYS_CALL        ;passa o comando para o SO
+    mov eax, SYS_WRITE      ;ativa operação de saída
+    mov ebx, STD_OUT        ;para a saída padrão
+    mov ecx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
+    mov edx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
+    int SYS_CALL            ;passa o comando para o SO
     
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
-    mov     eax,SYS_EXIT ;Indica o final de operação, corresponde a System.exit
-    mov     ebx,RET_EXIT ;Informa o estado final do programa - 0 sem erro
-    int     SYS_CALL    ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
+    mov     eax,SYS_EXIT    ;indica o final de operação, corresponde a System.exit
+    mov     ebx,RET_EXIT    ;informa o estado final do programa - 0 sem erro
+    int     SYS_CALL        ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
