@@ -36,7 +36,7 @@ _start:
     mov ebx, 0x1            ;para a saída padrão
     mov ecx, result         ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam0           ;diz qual o tamanho do dado no endereço 'result'
-    int 0x80                ;passa o comando para o SO
+    syscall                ;passa o comando para o SO
 
 ;operação de line feed 
     mov eax, 0x4            ;ativa operação de saída
