@@ -43,10 +43,10 @@ _start:
     mov ebx, 0x1            ;para a saída padrão
     mov ecx, nline          ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
     mov edx, tam1           ;diz qual o tamanho do dado no endereço 'nline'
-    int SYS_CALL            ;passa o comando para o SO
+    int 0x80                ;passa o comando para o SO
     
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
-    mov     eax,SYS_EXIT    ;indica o final de operação, corresponde a System.exit
-    mov     ebx,RET_EXIT    ;informa o estado final do programa - 0 sem erro
-    int     SYS_CALL        ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
+    mov     eax,0x1         ;indica o final de operação, corresponde a System.exit
+    mov     ebx,0x0         ;informa o estado final do programa - 0 sem erro
+    int     0x80            ;implemente chamadas de sistema(syscall), uma forma de os programas do espaço do usuário se comunicarem com o kernel.
