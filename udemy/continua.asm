@@ -15,10 +15,10 @@
 
 section .bss    ;secção variáveis
     result: resb 1    ;reserva espaço na memoria
-    tam0: equ $ - result ; $ - endereço final menos 'result' endereço inicial
+    tam0: equ $ - result ; $ - endereço final menos 'result' endereço inicial(equ - pseudoinstrução)
 
 section  .data
-    nline: db 0xA,0
+    nline: db 0xA,0     ;(db - pseudoinstrução - define uma cadeia de bytes)
     tam1: equ $ - nline
     
 
