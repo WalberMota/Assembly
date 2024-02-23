@@ -15,11 +15,11 @@
 
 section .bss    ;secção variáveis
     result: resb 1    ;reserva espaço na memoria
-    tam0: equ $- result ; tamanho da ṕarea criada
+    tam0: equ $ - result ; tamanho da ṕarea criada
 
 section  .data
     nline: db 0xA,0
-    tam1: equ $- nline
+    tam1: equ $ - nline
     
 
 section .text   ;aqui começa a programação
