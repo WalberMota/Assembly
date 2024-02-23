@@ -15,7 +15,12 @@ segment .data
 
 section .bss    ;secção variáveis
     result resb 1    ;reserva espaço na memoria
-    tam equ $- result ; tamanho da ṕarea criada
+    tam0 equ $- result ; tamanho da ṕarea criada
+
+section  .data
+    nline db 0xA,0
+    tam1 equ $- nline
+    
 
 section .text   ;aqui começa a programação
     global _start   ;label do ponto de entrada do programa
@@ -25,11 +30,18 @@ _start:
     mov eax, 0x41
     mov [result], eax
     int SYS_CALL
-
+;operação de mostrar o caracter ascii 41h (A)
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
     mov ecx, result     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
-    mov edx, tam         ;tamanho da string a ser exibida
+    mov edx, tam0         ;tamanho da string a ser exibida
+    int SYS_CALL        ;passa o comando para o SO
+
+;operação de line feed 
+    mov eax, SYS_WRITE   ;ativa operação de saída
+    mov ebx, STD_OUT     ;para a saída padrão
+    mov ecx, nline     ;exibe a mensagem ao usuário - imprimi o que está no endereço ?
+    mov edx, tam1         ;tamanho da string a ser exibida
     int SYS_CALL        ;passa o comando para o SO
     
 saida:
