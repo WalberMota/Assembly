@@ -1,4 +1,5 @@
-NAME=saida_syscall
+# saida com 0x80
+NAME=saida_0x80
 
 all: $(NAME).o
 	ld $(NAME).o 
