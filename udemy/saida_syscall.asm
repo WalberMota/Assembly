@@ -35,8 +35,8 @@ _start:
                             ;e deve ser evitada?
 saida:
     ;instruções obrigatórias para encerrar qualquer programa nasm
-    mov     eax,0x3c         ;indica o final de operação, corresponde a System.exit
-    mov     ebx,0x0         ;informa o estado final do programa - 0 sem erro
+    mov     rax,0x3c         ;indica o final de operação, corresponde a System.exit
+    mov     rdi,0x0         ;informa o estado final do programa - 0 sem erro
     syscall                 
                             ;syscall é a maneira padrão de entrar no modo kernel em x86-64.
                             ;Esta instrução não está disponível nos modos de operação de 32
