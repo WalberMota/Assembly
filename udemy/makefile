@@ -1,9 +1,9 @@
 # saida com 0x80
-NAME=saida_0x80
+NAME=saida_syscall
 
 all: $(NAME).o
 	ld $(NAME).o 
 	@rm *.o
 
 %.o: %.asm
-	nasm -g -f elf64 $<
+	nasm -f elf64 $<
