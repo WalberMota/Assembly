@@ -1,4 +1,4 @@
-NAME=soma_reg
+NAME=soma_IA
 
 all: $(NAME).o
 	ld $(NAME).o 
