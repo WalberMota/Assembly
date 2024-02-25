@@ -1,5 +1,4 @@
-# saida com 0x80
-NAME=saida_syscall
+NAME=soma_reg
 
 all: $(NAME).o
 	ld $(NAME).o 

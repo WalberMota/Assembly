@@ -1,13 +1,14 @@
-section. data
-        num1	dword	11111111h
-        num2	dword	10101010h
-        ans		dword	0
-        tam     equ $ - tam
-        nline db 0xA,0     ;(db - pseudoinstrução - define uma cadeia de bytes)
-        tam1 equ $ - nline
-segment .text
 
-global _start
+section. data
+    num1 dd	0xFF
+    num2 dd	0xAA
+    ans dd	0x0
+    tam  equ $ - ans
+        
+    nline db 0xA,0     ;(db - pseudoinstrução - define uma cadeia de bytes)
+    tam1 equ $ - nline
+section .text
+    global _start
 _start :
 ;carrega o valor 41h(65d) no registrador eax
     mov eax, num1
