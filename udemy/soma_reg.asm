@@ -11,9 +11,10 @@ section .text
     global _start
 _start :
 ;carrega o valor 41h(65d) no registrador eax
-    mov eax, num1
-    add eax, num2
+    mov eax, [num1]
+    add eax, [num2]
     mov ans, eax
+    int 0x80
 
     mov eax, 0x4
     mov ebx, 0x1
