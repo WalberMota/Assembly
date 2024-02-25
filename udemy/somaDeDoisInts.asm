@@ -14,6 +14,7 @@ segment .data
     RET_EXIT    equ 0x0 ; Operacao realizada com Sucesso
 
 section .bss    ;secção variáveis
+    numhexa resb 2
     result resb 2    ;reserva espaço na memoria
     tam equ $- result ; tamanho da ṕarea criada
 
@@ -22,10 +23,27 @@ section .text   ;aqui começa a programação
 
 _start:
 
-    mov eax, 0x22
-    add eax, 0x20
-    mov [result], eax
-    int SYS_CALL
+    ; mov eax, 0x3
+    ; add eax, 0x2
+    ; mov [numhexa], eax
+    ; int SYS_CALL
+
+
+    mov eax, 0x95
+    mov ebx, 0xf  ; Peso da posição mais à direita
+    mov ecx, 0x0  ; Resultado da conversão
+@loop:
+    xor edx, edx  ; Limpar o registrador EDX
+    div ebx      ; Dividir EAX por 16
+    add ecx, edx  ; Acumular o resto da divisão na variável dec_number
+    ;smov [result],ecx
+
+    mul ebx      ; Multiplicar o quociente por 16
+    cmp eax, 0x0   ; Verificar se todos os dígitos foram processados
+    jne @loop
+
+    mov [result], ecx ; Armazenar o resultado em dec_number
+
 
     mov eax, SYS_WRITE   ;ativa operação de saída
     mov ebx, STD_OUT     ;para a saída padrão
