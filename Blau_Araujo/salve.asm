@@ -20,7 +20,7 @@ _start:            ; Aqui está o início do programa.
     mov rdi, 1     ; Descritor de arquivos 1 (stdout).
     mov rsi, msg   ; Ponteiro para a string na memória.
     mov rdx, len   ; Constante com o tamanho da string.
-    syscall        ; Invoca a chamda de sistema com os
+    syscall        ; Invoca a chamada de sistema com os
                    ; dados nos registradores.
 
     mov rax, 60    ; Chamada de sistema 'sys_exit'
