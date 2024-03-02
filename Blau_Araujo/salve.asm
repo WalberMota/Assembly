@@ -1,28 +1,29 @@
 section .data
 
-    msg db "Salve, simpatia!",10  ; 'msg' - rótulo dos dados definidos.
-                                  ; 'db'  - os dados são definidos como
-                                  ;         uma cadeia de bytes.
+    msg1 db "Não entre em pânico!",10           
+    len1 equ $ - msg1
 
-    len equ $ - msg               ; len - rótulo do tamanho da mensagem.
-                                  ; equ - pseudo-instrução para definir constantes.
-                                  ; $   - Último endereço ocupado na memória.
-                                  ; msg - Rótulo do endereço inicial da mensagem.
+    msg2 db "e sempre carregue uma toalha", 10  
+    len2 equ $ - msg2
 
 section .text
 
-    global _start  ; A diretiva 'global' torna o rótulo '_start'
-                   ; visível de qualquer parte do programa.
+    global _start
 
-_start:            ; Aqui está o início do programa.
+_start:
 
-    mov rax, 1     ; Chamada de sistema 'sys_write'.
-    mov rdi, 1     ; Descritor de arquivos 1 (stdout).
-    mov rsi, msg   ; Ponteiro para a string na memória.
-    mov rdx, len   ; Constante com o tamanho da string.
-    syscall        ; Invoca a chamada de sistema com os
-                   ; dados nos registradores.
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, msg1
+    mov rdx, len1
+    syscall
 
-    mov rax, 60    ; Chamada de sistema 'sys_exit'
-    mov rdi, 0     ; Retorno 0 (sucesso)
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, msg2
+    mov rdx, len2
+    syscall
+
+    mov rax, 60
+    mov rdi, 0
     syscall
